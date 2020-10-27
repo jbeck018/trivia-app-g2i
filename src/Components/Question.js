@@ -1,4 +1,5 @@
 import React, {useContext} from 'react';
+import {useHistory} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactHtmlParser from 'react-html-parser';
@@ -22,6 +23,7 @@ const Question = (props) => {
     const windowSize = useWindowSize();
     const context = useContext(AppContext);
     const classes = useStyles();
+    const history = useHistory();
 
     const styles = {
         question: {
@@ -38,7 +40,10 @@ const Question = (props) => {
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center',
-            width: 275,
+            borderRadius: 5,
+            boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
+            padding: 20,
+            width: (windowSize.width > 450) ? 500 : (windowSize.width * .75),
         },
         buttons: {
             display: 'flex',
@@ -67,6 +72,7 @@ const Question = (props) => {
         }
         //increase the count and send to next question
         context.count.set(count+1);
+        history.push(`/quiz/${props.count + 1}`)
     }
 
     return(

@@ -4,6 +4,8 @@ import {useHistory} from "react-router-dom";
 import Progress from '../Components/Progress.js';
 import Button from '@material-ui/core/Button';
 import Answer from '../Components/Answer.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/pro-light-svg-icons';
 
 //TODO: add a purifier like https://github.com/cure53/DOMPurify to 
 //Protect against injection attacks since we are injecting HTML
@@ -36,7 +38,7 @@ const Quiz = React.memo(() => {
                 size='large'
                 color='primary'
             >
-                Play Again?
+                Play Again? <FontAwesomeIcon icon={faArrowRight} style={{paddingLeft: 10}}/>
             </Button>
         </div>
     );

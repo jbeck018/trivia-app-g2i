@@ -8,6 +8,8 @@ import axios from 'axios';
 import Home from './Pages/Home.js';
 import Quiz from './Pages/Quiz.js';
 import Summary from './Pages/Summary.js';
+import ErrorPage from './Pages/ErrorPage.js';
+import SlideLeft from './Utils/SlideLeft.js';
 
 export const AppContext = React.createContext();
 
@@ -58,13 +60,14 @@ const App = React.memo(() => {
   return (
     <AppContext.Provider value={store}>
       <Router>
-        <div>
+        <SlideLeft>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/quiz" component={Quiz} />
+            <Route exact path="/quiz/:id" component={Quiz} />
             <Route exact path="/summary" component={Summary} />
+            <Route component={ErrorPage} />
           </Switch>
-        </div>
+        </SlideLeft>
       </Router>
     </AppContext.Provider>
   );

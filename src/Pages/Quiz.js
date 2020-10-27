@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import useWindowSize from '../Utils/windowResize.js';
 
 
+
 const Quiz = React.memo(() => {
     const context = useContext(AppContext);
     const questions = context.questionList.get;
@@ -27,7 +28,7 @@ const Quiz = React.memo(() => {
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center',
-            width: 275,
+            width: (windowSize.width > 450) ? 500 : (windowSize.width * .75),
         },
         link: {
             textDecoration: 'none', 
@@ -44,6 +45,7 @@ const Quiz = React.memo(() => {
                                 <Question
                                     key={`question${index}`}
                                     question={question}
+                                    count={count}
                                 />
                     ))}
                 </div>
