@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import Question from '../Components/Question.js';
 import Button from '@material-ui/core/Button';
 import useWindowSize from '../Utils/windowResize.js';
+import ParticleBG from '../Components/ParticleBG.js';
 
 
 
@@ -50,20 +51,26 @@ const Quiz = React.memo(() => {
                     ))}
                 </div>
             ) : (
-                <div style={styles.question}>
-                    <div style={styles.body}>
-                        <h3>And that's it!</h3>
-                        <p>Let's see how you did.</p>
-                        <Link 
-                            style={styles.link} 
-                            to='/summary'
-                        >
-                            <Button variant="contained" color="primary">
-                                Continue
-                            </Button>
-                        </Link>
+                <>
+                    <ParticleBG 
+                        height={windowSize.height} 
+                        width={windowSize.width} 
+                    />
+                    <div style={styles.question}>
+                        <div style={styles.body}>
+                            <h3>And that's it!</h3>
+                            <p>Let's see how you did.</p>
+                            <Link 
+                                style={styles.link} 
+                                to='/summary'
+                            >
+                                <Button variant="contained" color="primary">
+                                    Continue
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
-                </div>
+                </>
             )}
         </div>
     );
