@@ -15,25 +15,31 @@ const App = React.memo(() => {
   //init global state(s).
   const [isLoading, setIsLoading] = useState(true);
   const [questionList, setQuestionList] = useState([]);
+  const [numCorrect, setNumCorrect] = useState(0);
+  const [count, setCount] = useState(0);
 
    //Create Global "Store"
    const store = {
     isLoading: {get: isLoading, set: setIsLoading},
     questionList: {get: questionList, set: setQuestionList},
+    numCorrect: {get: numCorrect, set: setNumCorrect},
+    count: {get: count, set: setCount},
   };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
+  //This function is redundant on the first call, but updates all the data later on.
   async function get_data() {
-    // this is just to get the csrftoken
     const url = `https://opentdb.com/api.php?amount=10&difficulty=hard&type=boolean`;
     const data = await axios.get(url)
                             .then((response) => {return response.data})
                             .catch((err) => console.log(err));
     
     //Uncomment this to see json response in console.:
-    console.log(data.results)                        
+    // console.log(data.results)                        
     //update the state
     setQuestionList(data.results);
+    setNumCorrect(0);
+    setCount(0);
     //cancel the loading function
     setIsLoading(false);
   };
