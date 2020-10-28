@@ -63,7 +63,7 @@ const Quiz = React.memo(() => {
                     />
                     <div style={styles.question}>
                         <div style={styles.body}>
-                            <h3>And that's it!</h3>
+                            <h1>And that's it!</h1>
                             <p>Let's see how you did.</p>
                             <Link 
                                 style={styles.link} 
