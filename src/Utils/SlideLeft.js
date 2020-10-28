@@ -1,4 +1,5 @@
 //Shamelessly used from https://medium.com/onfido-tech/animations-with-react-router-8e97222e25e1
+// Read the article above for more information on this works and why.
 
 import React from "react";
 import { Switch, Route } from "react-router-dom";

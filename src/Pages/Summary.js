@@ -10,7 +10,10 @@ import { faArrowRight } from '@fortawesome/pro-light-svg-icons';
 //TODO: add a purifier like https://github.com/cure53/DOMPurify to 
 //Protect against injection attacks since we are injecting HTML
 
-const Quiz = React.memo(() => {
+
+// The summary apge component is below. It maps the answers as cards,
+// shows how the user performed, and asks them to play again.
+const Summary = React.memo(() => {
     const context = useContext(AppContext);
     const questions = context.questionList.get;
     const numCorrect = context.numCorrect.get;
@@ -58,4 +61,4 @@ const styles = {
     }
 }
 
-export default Quiz;
+export default Summary;

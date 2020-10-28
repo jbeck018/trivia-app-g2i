@@ -7,7 +7,7 @@ import useWindowSize from '../Utils/windowResize.js';
 import ParticleBG from '../Components/ParticleBG.js';
 
 
-
+// The quiz page wrapped in memo to reduce loading if props haven't changed.
 const Quiz = React.memo(() => {
     const context = useContext(AppContext);
     const questions = context.questionList.get;
@@ -37,6 +37,10 @@ const Quiz = React.memo(() => {
         }
     };
 
+    //The statement below matches the question by count (or the index of the 
+    // question in the array). It then maps it to a Question component to display
+    // on screen. If count === 10 we show the "completion" page with a Particle BG.
+
     return(
         <div>
             {(count < 10) ? (
@@ -55,6 +59,7 @@ const Quiz = React.memo(() => {
                     <ParticleBG 
                         height={windowSize.height} 
                         width={windowSize.width} 
+                        type="secondary"
                     />
                     <div style={styles.question}>
                         <div style={styles.body}>

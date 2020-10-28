@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-light-svg-icons';
 import ParticleBG from '../Components/ParticleBG.js';
 
-const Home = React.memo(() => {
 
+//This is the Home page. I wrapped this page in Memo so that it will 
+// only reload if we tell it to or the page is refreshed.
+const Home = React.memo(() => {
+    // getting window size for responsiveness
     const windowSize = useWindowSize();
 
     const styles = {
@@ -37,6 +40,7 @@ const Home = React.memo(() => {
             <ParticleBG 
                 height={windowSize.height} 
                 width={windowSize.width} 
+                type="primary"
             />
             <div 
                 style={styles.question}

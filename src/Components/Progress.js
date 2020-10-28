@@ -4,6 +4,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+// This is the circular Progress indicator that shows how well the user did.
+// It is abstracted from Material UI Circular Progress.
+
 const Progress = (props) => {
 
     return (

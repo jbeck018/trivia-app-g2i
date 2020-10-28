@@ -5,6 +5,9 @@ import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/pro-light-svg-icons';
 
+// This is a catch all page for when a nonexisting page is found
+// It just redirects to the home page on a button click
+
 const ErrorPage = () => {
     const windowSize = useWindowSize();
 

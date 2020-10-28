@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-computed-key */
 import React from "react";
 import classNames from "classnames";
 import "./styles.css";
@@ -30,7 +31,7 @@ export default class Slider extends React.Component {
     }
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (newProps.position !== this.props.position) {
       this.startAnimation(newProps.position, newProps.animationCallback);
     }
