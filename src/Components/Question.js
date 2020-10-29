@@ -51,7 +51,10 @@ const Question = (props) => {
             boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
             padding: 20,
             width: (windowSize.width > 450) ? 500 : (windowSize.width * .75),
-            backgroundColor: '#fff'
+            backgroundColor: '#fff',
+            overflowWrap: 'anywhere',
+            wordWrap: 'break-word',
+            hyphens: 'auto',
         },
         category: {
             fontSize: 14,

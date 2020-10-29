@@ -23,6 +23,9 @@ const Answer = (props) => {
             boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)',
             padding: 10,
             marginBottom: 20,
+            overflowWrap: 'anywhere',
+            wordWrap: 'break-word',
+            hyphens: 'auto',
         },
         icon: {
             justifySelf: 'center',
