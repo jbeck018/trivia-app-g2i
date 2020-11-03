@@ -60,6 +60,8 @@ const App = React.memo(() => {
   return (
     <AppContext.Provider value={store}>
       <Router>
+        {/* The SlideLeft Component was shamelessly copied for expediency. Also,
+        note that it is jumpy locally, but resolves itself when pushed to production. */}
         <SlideLeft>
           <Switch>
             <Route exact path="/" component={Home} />
